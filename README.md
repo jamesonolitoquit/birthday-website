@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Birthday Surprise Website
 
-## Getting Started
+A playful, animated birthday surprise website that starts as a portfolio and transforms into a festive celebration.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Disguised Portfolio**: Initially looks like a professional portfolio
+- **Surprise Popup**: Triggers the transformation after 3 seconds
+- **GSAP Animations**: Master timeline controls all major animations
+- **Name Morph**: "Franchezca Anne Ortiz" rearranges to "Chazie"
+- **Canvas Animals**: Cartoon cats and dogs with sprite animations
+- **Scroll Reveals**: Progressive content reveals with parallax
+- **Mobile Optimized**: Performance optimizations for mobile devices
+- **Accessibility**: Respects `prefers-reduced-motion`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Run development server:
+   ```bash
+   npm run dev
+   ```
 
-## Learn More
+3. Open [http://localhost:3000](http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Adding Photos
+- Place images in `/public/images/`
+- Update the photo placeholders in `src/app/page.tsx`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Adding Music
+- Add birthday music to `/public/birthday-song.mp3`
+- Uncomment the audio code in `src/lib/gsap-timeline.ts` and `src/app/page.tsx`
 
-## Deploy on Vercel
+### Sprite Sheets
+- Add cat and dog sprite sheets to `/public/sprites/`
+- Update `src/lib/canvas-animals.ts` to load and animate sprites
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy to Vercel for free hosting:
+
+1. Push to GitHub
+2. Connect to Vercel
+3. Deploy automatically
+
+## Architecture
+
+- **State A**: Monochrome portfolio (no birthday hints)
+- **State B**: Pastel birthday celebration
+- **GSAP Timeline**: Controls transformation sequence
+- **Canvas**: Animal animations
+- **ScrollTrigger**: Parallax and reveals
+
+## Performance
+
+- Canvas throttling on mobile
+- Respects reduced motion preferences
+- Lazy loading and optimized animations
